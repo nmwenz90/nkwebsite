@@ -1,29 +1,20 @@
-// let listGroup = document.querySelector('.list-group a')
-// listGroup.addEventListener('click', function(e) {
-//     console.log(e)
-//     e.preventDefault()
-//     console.log('clicked')
-//     document.querySelector('.win img').attr("src", querySelector(this).attr("href"))
-// })
 
+// Text
 const portfolioWebButtonText = 'Open Website'
 const eventflyer = 'https://nmwenz90.github.io/eventflyer.github.io/'
 const reactime = 'https://reactime.io'
 const miah = 'https://themiahapp.herokuapp.com/'
 const soundboard = 'https://nmwenz90.github.io/Nate-s-SoundBoard-Project/'
 const lp = 'https://www.openprocessing.org/sketch/623862'
-//2ND COLUMN IMAGE
+//2ND COLUMN IMAGE LG
 let mainImg = document.querySelector('#worksWindow img')
-
+//ANIME ANIMATION
 setTimeout(() => {
     anime({
         targets: '#aka',
         opacity: 1
       });
 }, 80)
-
-
-
 
 //THUMBNAILS
 const thumb1 = document.querySelector('#thumb1')
@@ -54,28 +45,18 @@ span1.innerHTML = '<span>Check out my other works on:<span>'
 const outerDiv = document.createElement('div')
 outerDiv.setAttribute('class', 'otherWorksContainer row');
 
-const bandcampImg = document.createElement('img')
-bandcampImg.setAttribute('src', 'https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301321/bandcamp-logotype-color-512_ifwbso.png');
-bandcampImg.setAttribute('class', 'bandcampImg image-thumbnail col-lg-6' )
-
-const audiusImg = document.createElement('img')
-audiusImg.setAttribute('src', 'https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301540/audius_transparent_hgwabb.png');
-audiusImg.setAttribute('class', 'audiusImg image-thumbnail col-lg-3' )
-//Image
-const centImg = document.createElement('img')
-centImg.setAttribute('src', 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrishparr.com%2Fwp-content%2Fuploads%2F2011%2F02%2Fcent-symbol-header-image.png&f=1&nofb=1');
-centImg.setAttribute('class', 'centImg image-thumbnail col-lg-3' )
-centImg.setAttribute('height', '100px' )
-
-const raribleImg = document.createElement('img')
-raribleImg.setAttribute('src', 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fairdrops.io%2Fwp-content%2Fuploads%2F2020%2F10%2FRarible-logo.jpg&f=1&nofb=1');
-raribleImg.setAttribute('class', 'raribleImg image-thumbnail col-lg-2' )
-raribleImg.setAttribute('height', '100px' )
-
-const spotifyImg = document.createElement('img')
-spotifyImg.setAttribute('src', 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2017%2F08%2FSpotify-Logo.png&f=1&nofb=1');
-spotifyImg.setAttribute('class', 'spotifyImg image-thumbnail col-lg-3' )
-spotifyImg.setAttribute('height', '100px' )
+function showWorksImage(src, imgClass, height) {
+    const image = document.createElement('img');
+    image.setAttribute('src', src);
+    image.setAttribute('class', imgClass);
+    height === true ? image.setAttribute('height', '100px' ): console.log('void');
+    outerDiv.appendChild(image)
+}
+const bandcampImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301321/bandcamp-logotype-color-512_ifwbso.png', 'bandcampImg image-thumbnail col-lg-6')
+const audiusImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301540/audius_transparent_hgwabb.png', 'audiusImg image-thumbnail col-lg-3')
+const centImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrishparr.com%2Fwp-content%2Fuploads%2F2011%2F02%2Fcent-symbol-header-image.png&f=1&nofb=1', 'centImg image-thumbnail col-lg-3', true)
+const raribleImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fairdrops.io%2Fwp-content%2Fuploads%2F2020%2F10%2FRarible-logo.jpg&f=1&nofb=1', 'raribleImg image-thumbnail col-lg-2', true )
+const spotifyImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2017%2F08%2FSpotify-Logo.png&f=1&nofb=1', 'spotifyImg image-thumbnail col-lg-3', true)
 
 const captionText = document.querySelector('.caption')
 
@@ -86,7 +67,6 @@ const portfolioWebButton = document.querySelector('#portfolioWebButton');
 console.log('reactime src', thumb6Src)
 thumb1.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log('clicked')
     mainImg.style.display = 'block'
     mainImg.src = thumb1Src
     mainImg.style.cursor = 'pointer'
@@ -157,11 +137,6 @@ thumb5.addEventListener('click', (e) => {
 // worksWindow
 outerDiv.style.display = 'block'
 worksWindow.appendChild(outerDiv)
-outerDiv.appendChild(bandcampImg)
-outerDiv.appendChild(audiusImg)
-outerDiv.appendChild(centImg)
-outerDiv.appendChild(raribleImg)
-outerDiv.appendChild(spotifyImg)
 
 //WORKSWINDOW IMAGE EVENTS
 bandcampImg.addEventListener('click', () => window.open('https://natekodi.bandcamp.com'))
@@ -204,6 +179,5 @@ mainImg.addEventListener('click', () => {
     if(mainImg.src === thumb2Src) window.open(miah)
     if(mainImg.src === thumb3Src) window.open(soundboard)
     if(mainImg.src === thumb4Src) window.open(lp)
-
     if(mainImg.src === thumb6Src) window.open(eventflyer)
 })
