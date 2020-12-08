@@ -149,6 +149,7 @@ thumb5.addEventListener('click', (e) => {
     captionText.href = 'https://natekodi.bandcamp.com'
     portfolioWebButton.href = 'https://natekodi.bandcamp.com'
     portfolioWebButton.innerHTML = 'All Music'
+    portfolioWebButton.style.width = '10rem'
     
     //add outer div with 1 child that has 1 sibling
     //outer div
