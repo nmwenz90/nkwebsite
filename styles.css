@@ -265,7 +265,7 @@ form {
 .spanText {
     margin-top: 5vh;
     margin-left:3vw;
-    font-size: 2.5rem;
+    font-size: vw;
     text-align: justify;
     opacity: .7;
     letter-spacing: .1vw;

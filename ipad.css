@@ -289,8 +289,8 @@ and (orientation : portrait) {
     
     .spanText {
         margin-top: 5vh;
-        margin-left:3vw;
-        font-size: 1rem;
+        margin-left: 4.5vw;
+        font-size: 3rem;
         text-align: justify;
         opacity: .7;
         letter-spacing: .1vw;
