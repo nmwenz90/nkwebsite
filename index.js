@@ -1,4 +1,6 @@
+import { showWorksImage, outerDiv } from './utilities.js'
 
+// console.log('works -->',works)
 // Text
 const portfolioWebButtonText = 'Open Website'
 const eventflyer = 'https://nmwenz90.github.io/eventflyer.github.io/'
@@ -42,21 +44,11 @@ const span1 = document.createElement('div')
 span1.setAttribute('class', 'spanText row ')
 span1.innerHTML = '<span>Check out my other works on:<span>'
 
-const outerDiv = document.createElement('div')
-outerDiv.setAttribute('class', 'otherWorksContainer row');
-
-function showWorksImage(src, imgClass, height) {
-    const image = document.createElement('img');
-    image.setAttribute('src', src);
-    image.setAttribute('class', imgClass);
-    height === true ? image.setAttribute('height', '100px' ): console.log('void');
-    outerDiv.appendChild(image)
-}
-const bandcampImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301321/bandcamp-logotype-color-512_ifwbso.png', 'bandcampImg image-thumbnail col-lg-6')
-const audiusImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301540/audius_transparent_hgwabb.png', 'audiusImg image-thumbnail col-lg-3')
-const centImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrishparr.com%2Fwp-content%2Fuploads%2F2011%2F02%2Fcent-symbol-header-image.png&f=1&nofb=1', 'centImg image-thumbnail col-lg-3', true)
-const raribleImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fairdrops.io%2Fwp-content%2Fuploads%2F2020%2F10%2FRarible-logo.jpg&f=1&nofb=1', 'raribleImg image-thumbnail col-lg-2', true )
-const spotifyImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2017%2F08%2FSpotify-Logo.png&f=1&nofb=1', 'spotifyImg image-thumbnail col-lg-3', true)
+const bandcampImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301321/bandcamp-logotype-color-512_ifwbso.png', 'bandcampImg image-thumbnail col-lg-6', false, 'bandcamp')
+const audiusImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301540/audius_transparent_hgwabb.png', 'audiusImg image-thumbnail col-lg-3', false, 'audius')
+const centImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrishparr.com%2Fwp-content%2Fuploads%2F2011%2F02%2Fcent-symbol-header-image.png&f=1&nofb=1', 'centImg image-thumbnail col-lg-3', true, 'cent')
+const raribleImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fairdrops.io%2Fwp-content%2Fuploads%2F2020%2F10%2FRarible-logo.jpg&f=1&nofb=1', 'raribleImg image-thumbnail col-lg-2', true, 'rarible' )
+const spotifyImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2017%2F08%2FSpotify-Logo.png&f=1&nofb=1', 'spotifyImg image-thumbnail col-lg-3', true, 'spotify')
 
 const captionText = document.querySelector('.caption')
 
@@ -64,60 +56,42 @@ const captionText = document.querySelector('.caption')
 
 const portfolioWebButton = document.querySelector('#portfolioWebButton');
 
-console.log('reactime src', thumb6Src)
-thumb1.addEventListener('click', (e) => {
-    e.preventDefault()
-    mainImg.style.display = 'block'
-    mainImg.src = thumb1Src
-    mainImg.style.cursor = 'pointer'
-    outerDiv.style.display = 'none'
-    captionText.innerHTML = ' Reactime is a Time travel debugger for React Applications'
-    portfolioWebButton.href = reactime
-    portfolioWebButton.innerHTML = portfolioWebButtonText
-    span1.style.display='none'
-})
+class ThumbnailObj {
+    constructor(imgSrc, capText, href){
+        this.capText = capText;
+        this.href = href;
+        this.imgSrc = imgSrc;
+    }
+    listener = (e) => {
+        e.preventDefault();
+        mainImg.style.display = 'block';
+        mainImg.src = this.imgSrc;
+        mainImg.style.cursor = 'pointer';
+        outerDiv.style.display = 'none';
+        captionText.innerHTML = this.capText;
+        portfolioWebButton.href = this.href;
+        portfolioWebButton.innerHTML = portfolioWebButtonText;
+        span1.style.display='none';
+    }
+}
+
+// const hr
+const thumbObj1 = new ThumbnailObj(thumb1Src,'Reactime is a Time travel debugger for React Applications', reactime);
+const thumbObj2 = new ThumbnailObj(thumb2Src,'Machine Learning based communication (AAC) tool to aid the speech impaired', miah);
+const thumbObj3 = new ThumbnailObj(thumb3Src, 'Soundboard is a drum machine that plays original wav samples', soundboard);
+const thumbObj4 = new ThumbnailObj(thumb4Src, 'LP is a animated music player with original music',lp)
+const thumbObj6 = new ThumbnailObj(thumb6Src, 'Event flyer is an interacctive flyer designed for Pittsburgh Artist JKJ', eventflyer)
+// console.log('thumbobj src', thumbObj1.imgSrc)
+thumb1.addEventListener('click', thumbObj1.listener);
+thumb2.addEventListener('click', thumbObj2.listener);
+thumb3.addEventListener('click', thumbObj3.listener);
+thumb4.addEventListener('click', thumbObj4.listener);
+thumb6.addEventListener('click', thumbObj6.listener);
 
 //EVENTS
-thumb2.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('clicked')
-    mainImg.style.display = 'block'
-    mainImg.src = thumb2Src
-    mainImg.style.cursor = 'pointer'
-    outerDiv.style.display = 'none'
-    captionText.innerHTML = 'Machine Learning based communication (AAC) tool to aid the speech impaired'
-    portfolioWebButton.href = miah
-    portfolioWebButton.innerHTML = portfolioWebButtonText
-    span1.style.display='none'
-})
 
 
-thumb3.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('clicked')
-    mainImg.style.display = 'block'
-    mainImg.src = thumb3Src
-    mainImg.style.cursor = 'pointer'
-    outerDiv.style.display = 'none'
-    captionText.innerHTML = 'Soundboard is a drum machine that plays original wav samples'
-    portfolioWebButton.href = soundboard
-    portfolioWebButton.innerHTML = portfolioWebButtonText
-    span1.style.display='none'
-})
 
-thumb4.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('clicked')
-    mainImg.style.display = 'block'
-    mainImg.src = thumb4Src
-    mainImg.style.cursor = 'pointer'
-    outerDiv.style.display = 'none'
-    captionText.innerHTML = 'LP is a music player artpiece with original music'
-    portfolioWebButton.href = lp
-    portfolioWebButton.innerHTML = portfolioWebButtonText
-    span1.style.display='none'
-    
-})
 //Music work
 thumb5.addEventListener('click', (e) => {
     e.preventDefault()
@@ -130,14 +104,10 @@ thumb5.addEventListener('click', (e) => {
     portfolioWebButton.href = 'https://natekodi.bandcamp.com'
     portfolioWebButton.innerHTML = 'All Music'
     portfolioWebButton.style.width = '10rem'
-    
-    //add outer div with 1 child that has 1 sibling
-    //outer div
 
 // worksWindow
 outerDiv.style.display = 'block'
 worksWindow.appendChild(outerDiv)
-
 //WORKSWINDOW IMAGE EVENTS
 bandcampImg.addEventListener('click', () => window.open('https://natekodi.bandcamp.com'))
 audiusImg.addEventListener('click', () => window.open('https://audius.co/natekodi'))
@@ -148,31 +118,6 @@ spotifyImg.addEventListener('click', () => window.open('https://open.spotify.com
 })
 
 // More Works
-thumb6.addEventListener('click', (e) => {
-    e.preventDefault()
-    console.log('clicked')
-    mainImg.style.display = 'block'
-    mainImg.src = thumb6Src
-    mainImg.style.cursor = 'pointer'
-    // outerDiv.style.display = 'none'
-    outerDiv.display = 'block' ? outerDiv.remove() : console.log('huh')
-    captionText.innerHTML = 'Event flyer is an interacctive flyer designed for Pittsburgh Artist JKJ'
-    portfolioWebButton.href = eventflyer
-    portfolioWebButton.innerHTML = portfolioWebButtonText
-    span1.style.display='none'
-})
-
-// thumb7.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     console.log('clicked')
-//     mainImg.src = thumb7Src
-// })
-
-// thumb8.addEventListener('click', (e) => {
-//     e.preventDefault()
-//     console.log('clicked')
-//     mainImg.src = thumb8Src
-// })
 
 mainImg.addEventListener('click', () => {
     if(mainImg.src === thumb1Src) window.open(reactime)
