@@ -1,6 +1,6 @@
 import { showWorksImage, outerDiv } from './utilities.js'
+import runAnimation from './runAnimation.js'
 
-// console.log('works -->',works)
 // Text
 const portfolioWebButtonText = 'Open Website'
 const eventflyer = 'https://nmwenz90.github.io/eventflyer.github.io/'
@@ -11,12 +11,21 @@ const lp = 'https://www.openprocessing.org/sketch/623862'
 //2ND COLUMN IMAGE LG
 let mainImg = document.querySelector('#worksWindow img')
 //ANIME ANIMATION
+// runAnimation()
+
 setTimeout(() => {
     anime({
         targets: '#aka',
         opacity: 1
       });
+
+    // runAnimation()
 }, 80)
+
+setTimeout(() => {
+    runAnimation()
+}, 1)
+
 
 //THUMBNAILS
 const thumb1 = document.querySelector('#thumb1')
@@ -81,7 +90,7 @@ const thumbObj2 = new ThumbnailObj(thumb2Src,'Machine Learning based communicati
 const thumbObj3 = new ThumbnailObj(thumb3Src, 'Soundboard is a drum machine that plays original wav samples', soundboard);
 const thumbObj4 = new ThumbnailObj(thumb4Src, 'LP is a animated music player with original music',lp)
 const thumbObj6 = new ThumbnailObj(thumb6Src, 'Event flyer is an interacctive flyer designed for Pittsburgh Artist JKJ', eventflyer)
-// console.log('thumbobj src', thumbObj1.imgSrc)
+
 thumb1.addEventListener('click', thumbObj1.listener);
 thumb2.addEventListener('click', thumbObj2.listener);
 thumb3.addEventListener('click', thumbObj3.listener);
@@ -126,3 +135,4 @@ mainImg.addEventListener('click', () => {
     if(mainImg.src === thumb4Src) window.open(lp)
     if(mainImg.src === thumb6Src) window.open(eventflyer)
 })
+
