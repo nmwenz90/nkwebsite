@@ -18,8 +18,6 @@ setTimeout(() => {
         targets: '#aka',
         opacity: 1
       });
-
-    // runAnimation()
 }, 80)
 
 setTimeout(() => {
@@ -57,7 +55,7 @@ const bandcampImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/u
 const audiusImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301540/audius_transparent_hgwabb.png', 'audiusImg image-thumbnail col-lg-3', false, 'audius')
 const centImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrishparr.com%2Fwp-content%2Fuploads%2F2011%2F02%2Fcent-symbol-header-image.png&f=1&nofb=1', 'centImg image-thumbnail col-lg-3', true, 'cent')
 const raribleImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fairdrops.io%2Fwp-content%2Fuploads%2F2020%2F10%2FRarible-logo.jpg&f=1&nofb=1', 'raribleImg image-thumbnail col-lg-2', true, 'rarible' )
-const spotifyImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1000logos.net%2Fwp-content%2Fuploads%2F2017%2F08%2FSpotify-Logo.png&f=1&nofb=1', 'spotifyImg image-thumbnail col-lg-3', true, 'spotify')
+const spotifyImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1614056491/opensea-logomark-full-colored_pmpu9r.png', 'spotifyImg image-thumbnail col-lg-3', true, 'opensea')
 
 const captionText = document.querySelector('.caption')
 
@@ -122,7 +120,7 @@ bandcampImg.addEventListener('click', () => window.open('https://natekodi.bandca
 audiusImg.addEventListener('click', () => window.open('https://audius.co/natekodi'))
 centImg.addEventListener('click', () => window.open('https://beta.cent.co/natekodi'))
 raribleImg.addEventListener('click', () => window.open('https://app.rarible.com/natekodi'))
-spotifyImg.addEventListener('click', () => window.open('https://open.spotify.com/artist/7M7UJrBfcvJamNJUfFb6fu'))
+spotifyImg.addEventListener('click', () => window.open('https://opensea.io/accounts/natekodi'))
 
 })
 
