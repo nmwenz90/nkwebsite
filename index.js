@@ -51,6 +51,7 @@ const span1 = document.createElement('div')
 span1.setAttribute('class', 'spanText row ')
 span1.innerHTML = '<span>Check out my other works on:<span>'
 
+//showsworks imagge diap
 const bandcampImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301321/bandcamp-logotype-color-512_ifwbso.png', 'bandcampImg image-thumbnail col-lg-6', false, 'bandcamp')
 const audiusImg = showWorksImage('https://res.cloudinary.com/dvwvkt7iq/image/upload/v1607301540/audius_transparent_hgwabb.png', 'audiusImg image-thumbnail col-lg-3', false, 'audius')
 const centImg = showWorksImage('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftrishparr.com%2Fwp-content%2Fuploads%2F2011%2F02%2Fcent-symbol-header-image.png&f=1&nofb=1', 'centImg image-thumbnail col-lg-3', true, 'cent')
@@ -79,6 +80,12 @@ class ThumbnailObj {
         portfolioWebButton.href = this.href;
         portfolioWebButton.innerHTML = portfolioWebButtonText;
         span1.style.display='none';
+        portfolioWebButton.innerHTML = 'Working'
+    }
+
+    hoverListener = (e) => {
+        e.preventDefault();
+
     }
 }
 
