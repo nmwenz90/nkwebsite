@@ -66,11 +66,16 @@ nav a {
 
 .list-group{
     margin-top: 10vh;
+    padding: #81FBB8a2 5px solid;
 }
 
 .list-group-item {
-    background-color: #F7F7F7;
+    background-color: #81FBB8a2;
     border: none;
+}
+
+.list-group-item-action {
+    background-color: #81fbb8e7;
 }
 .list-group-item:hover {
     background-color: #4DE6A9EE;
@@ -182,7 +187,7 @@ footer {
    /* background:#6cf; */
    /* border-top: 2px solid #adadad7c; */
     background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
-    color: #1C1200;
+    color: #1c1200af;
     z-index: 1000;
 }
 
