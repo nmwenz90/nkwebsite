@@ -9,13 +9,13 @@ img {
 nav {
     /* background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%); */
     z-index: 200;
-    background-color: #F7F7F7;
+    background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%);
     color: #F7F7F7;
     /* border-bottom: 2px solid #adadad7c; */
 }
 
 section {
-    background-color: #F7F7F7;
+    background-color: #F1F8D6;
 }
 
 .navLogo {
@@ -36,6 +36,7 @@ nav a {
 
 .homeSection{
     height: 84vh;
+    padding-top: 5vh;
 }
 
 #textbg{
@@ -91,24 +92,24 @@ nav a {
 #name {
     position: relative;
     font-size: 20px;
-    top: -14vh
+    top: -13vh
 }
 
-#worksColumn {
+#appsColumn {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     background-color: #C643BB1a;
     height: 72vh;
 }
-#worksWindow {
+#appsWindow {
     background-color: #C643BB1a;
     height: 70vh;
     /* width: auto; */
     font-size: 1.5rem;
     border-radius: 10px;
 }
-#worksWindow img {
+#appsWindow img {
     cursor: pointer;
 }
 
@@ -170,9 +171,13 @@ nav a {
 }
 
 footer {
-    position: fixed;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
    bottom:0;
    width:100%;
+   height: 7%;
    /* Height of the footer */
    /* background:#6cf; */
    /* border-top: 2px solid #adadad7c; */
@@ -247,19 +252,8 @@ footer img {
 }
 
 form {
-    /* position: absolute; */
     font-size: 1.1em;
-    /* left: 9%; */
-    /* top: 57vh; */
-    /* width: 300px; */
     font-weight: 300;
-    /* text-align: justify; */
-    /* line-height: 25px; */
-    /* border-left: 1px solid #495057ee;
-    border-bottom: 1px solid #495057bb;
-    border-bottom-left-radius: 10px; */
-    /* padding-left: 3px; */
-    /* padding-bottom: 3px; */
 }
 
 #formControlTextarea1{
@@ -296,7 +290,147 @@ canvas {
     z-index: 1;
 }
 
+#header3 {
+    font-size: 2.5rem;
+    padding-top: 15vh;
+    padding-bottom: 1vh;
+    margin-left: 15vw;
+
+}
+
+#audiusHeader3 {
+    font-size: 2.5rem;
+    padding-bottom: 1vh;
+    margin-left: 15vw;
+
+}
+
+#grid {
+    width: 100%;
+    display: flex; 
+    /* it's actually a flexbox */
+    flex-direction: row;
+    /* justify-content: space-around; */
+    overflow: auto;
+    flex-flow: nowrap;
+    margin-top: 1vh;
+    padding-bottom: 5vh;
+}
+
+#audiusGrid {
+    width: 100%;
+    display: flex; 
+    /* it's actually a flexbox */
+    flex-direction: row;
+    /* justify-content: space-around; */
+    overflow: auto;
+    flex-flow: nowrap;
+    margin-top: 1vh;
+    padding-bottom: 15vh;
+}
+
+#cardBody {
+    width: 290px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center */
+    text-align: center;
+    font-family: 'Ramabhadra', sans-serif;
+}
+
+.customCard {
+    width: 100%;
+    height: auto;
+    border: none;
+    background-color: #646ee048;
+    border-radius: 10px;
+    margin: 0 1rem;
+    padding: 1rem;
+}
+
+.card-img-top {
+    object-fit: fill;
+    width: 290px;
+    max-height: 290px;
+    width: 100%;
+    height: 35vh;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #f8ae1b28;
+    background-color: #f8ae1b3d;
+}
+
+#button{
+    text-align: center;
+    font-size: 1em;
+    width: 15vw;
+    color:rgba(39, 39, 39, 0.742);
+    border-radius: 10px;
+    letter-spacing: .2rem;
+    margin: 0 auto;
+}
+
+#button:hover{
+    background-color: #646ee0f6;
+    color: #F7F7F7;
+}
+
+.card-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Ramabhadra', sans-serif;
+    color: #17171798;
+    padding-bottom: 1vh;
+    border-bottom: solid #212529af 5px;
+}
+
+img:hover{
+    cursor: pointer;
+}
+
+.card-text{
+    word-wrap: break-word;
+    width: 16vw;
+    padding: 3px;
+    word-spacing: 5px;
+    font-size: 1rem;
+    
+}
  
+/* #card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vw;
+} */
+
+#readMore {display: none;}
+
+#dots {
+    font-weight: 900;
+}
+
+#dots:hover {
+    font-weight: 900;
+    text-decoration: underline;
+    cursor: default;
+}
+
+#exampleFormControlInput1, #formControlTextarea1 {
+    border: 2px #f7f7f73a solid;
+    /* padding: 1rem; */
+    background-color: #c9d1d95b;
+}
+
+label {
+    font-weight: 800;
+    color:#1c1200b1;
+}
+
 
 
 /* iphone 6 7 and 8 */

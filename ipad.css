@@ -121,14 +121,14 @@ and (orientation : portrait) {
 
    
     
-    #worksColumn {
+    #appsColumn {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         background-color: #C643BB1a;
         height: 72vh;
     }
-    #worksWindow {
+    #appsWindow {
         background-color: #C643BB1a;
         height: 84vh;
         /* width: 20vw; */

@@ -116,14 +116,14 @@
 
    
     
-    #worksColumn {
+    #appsColumn {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         background-color: #C643BB1a;
         height: 72vh;
     }
-    #worksWindow {
+    #appsWindow {
         background-color: #C643BB1a;
         height: 84vh;
         /* width: auto; */
@@ -298,6 +298,11 @@
         margin-top: 3vh;
         cursor: pointer;
     }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
  }
 
  @media only screen 
@@ -402,21 +407,21 @@ and (orientation : landscape) {
         top: -25vh
     }
     
-    #worksColumn {
+    #appsColumn {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         background-color: #C643BB1a;
         height: 72vh;
     }
-    #worksWindow {
+    #appsWindow {
         background-color: #C643BB1a;
         height: 70vh;
         /* width: auto; */
         font-size: 1.5rem;
         border-radius: 10px;
     }
-    #worksWindow img {
+    #appsWindow img {
         cursor: pointer;
     }
     
@@ -582,7 +587,7 @@ and (orientation : landscape) {
         letter-spacing: .1vw;
     }
 
-    .otherWorksContainer {
+    .otherappsContainer {
         width: 50vw;
     }
     
