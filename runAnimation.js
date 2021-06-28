@@ -7,15 +7,28 @@ export default function runAnimation() {
     backgroundColor: 0xf1f8d6,
   });
 
-  const graphic = new PIXI.Graphics();
-  graphic.x = app.renderer.width / 2;
-  graphic.y = app.renderer.height / 2;
-  app.stage.addChild(graphic);
+  const circle = new PIXI.Graphics();
 
-  // graphic.lineStyle(5, 0xABCDEF)
-  graphic.beginFill('0x' + 'FDCDED');
-  graphic.drawShape(new PIXI.Circle(300, 0, 100, 100));
-  graphic.endFill();
+  const setup = () => {
+    app.stage.interactive = true;
+    app.stage.addChild(circle);
+
+    // circle.lineStyle(5, 0xABCDEF)
+    circle.beginFill('0x' + 'FDCDED');
+    circle.drawShape(new PIXI.Circle(1100, 400, 150, 100));
+    circle.endFill();
+
+    // animationLoop();
+  };
+
+  app.loader.load(setup);
+
+  const animationLoop = () => {
+    requestAnimationFrame(animationLoop);
+    circle.x = app.renderer.width / 2;
+    circle.y = app.renderer.height / 2;
+    circle.x += 1;
+  };
 
   document.body.appendChild(app.view);
 }
