@@ -224,7 +224,7 @@ if (window.location.pathname === '/art.html') {
     // let fetchedData;
     try {
       const res = await fetch(
-        'https://api.opensea.io/api/v1/assets?owner=0x481682c6183bbaaf0b8b8136875dfa24bf508826&order_direction=desc&offset=0&limit=7&order_by=visitor_count',
+        'https://api.opensea.io/api/v1/assets?owner=0x481682c6183bbaaf0b8b8136875dfa24bf508826&order_direction=desc&offset=0&limit=50&order_by=pk',
         options
       );
       const fetchedData = await res.json();
@@ -239,7 +239,9 @@ if (window.location.pathname === '/art.html') {
 
   //CARDS from opensea data
   if (openSeaData) {
-    const assets = openSeaData.assets;
+    const assets = openSeaData.assets.filter(
+      (a) => a.collection.name === 'Rarible' || a.collection.name === 'NLoops'
+    );
     for (let i = 0; i < assets.length; i++) {
       const cardName = assets[i];
 
