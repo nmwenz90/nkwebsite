@@ -1,8 +1,6 @@
 import { showappsImage, outerDiv, generateElement } from './utilities.js';
 import runAnimation from './runAnimation.js';
 
-console.log('current window or path', window.location.pathname);
-
 if (window.location.pathname === '/index.html') {
   setTimeout(() => {
     anime({
@@ -54,7 +52,7 @@ if (window.location.pathname === '/apps.html') {
   //Span
   const span1 = document.createElement('div');
   span1.setAttribute('class', 'spanText row ');
-  span1.innerHTML = '<span>Check out my other apps on:<span>';
+  span1.innerHTML = '<span>Check out my other works on:<span>';
 
   //showsapps imagge diap
   const bandcampImg = showappsImage(
@@ -169,7 +167,6 @@ if (window.location.pathname === '/apps.html') {
   //Music work
   thumb5.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('clicked');
     mainImg.style.display = 'none';
     span1.style.display = 'block';
     appsWindow.appendChild(span1);
@@ -213,10 +210,8 @@ if (window.location.pathname === '/apps.html') {
 }
 
 if (window.location.pathname === '/art.html') {
-  console.log('im on the page!');
   const openseaGrid = generateElement('div', 'container', 'grid');
   const audiusGrid = generateElement('div', 'container', 'audiusGrid');
-  console.log('curr grid', openseaGrid);
 
   const options = { method: 'GET' };
 
@@ -224,13 +219,12 @@ if (window.location.pathname === '/art.html') {
     // let fetchedData;
     try {
       const res = await fetch(
-        'https://api.opensea.io/api/v1/assets?owner=0x481682c6183bbaaf0b8b8136875dfa24bf508826&order_direction=desc&offset=0&limit=50&order_by=pk',
+        'https://api.opensea.io/api/v1/assets?owner=0x481682c6183bbaaf0b8b8136875dfa24bf508826&order_direction=asc&offset=0&limit=50&order_by=pk',
         options
       );
       const fetchedData = await res.json();
       return fetchedData;
     } catch (err) {
-      console.log(err);
       return null;
     }
   }
@@ -270,7 +264,6 @@ if (window.location.pathname === '/art.html') {
         cardText.appendChild(p);
         cardText.innerHTML = `
                         <p>${firstHalf}<span id="dots" onclick="(function runit (){
-                            console.log('clicking')
                             const readMore = document.querySelector('#readMore')
                             // const dots = document.querySelector('#dots')
                             readMore.style.display === 'inline' ? readMore.style.display = 'none' : readMore.style.display = 'inline'
@@ -350,7 +343,6 @@ if (window.location.pathname === '/art.html') {
         cardText.appendChild(p);
         cardText.innerHTML = `
                         <p>${firstHalf}<span id="dots" onclick="(function runit (){
-                            console.log('clicking')
                             const readMore = document.querySelector('#readMore')
                             // const dots = document.querySelector('#dots')
                             readMore.style.display === 'inline' ? readMore.style.display = 'none' : readMore.style.display = 'inline'
